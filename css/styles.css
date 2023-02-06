@@ -388,7 +388,7 @@ img{
     border-radius: 4px;
     color: #8E8F99;
     
-    transition-property: color ;
+    transition-property: color, border;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -494,7 +494,7 @@ div.foorer.container {
     border: 1px solid #E7E9FC;
     border-radius: 4px;
 
-    transition-property: background-color color box-shadow;
+    transition-property: background-color, color, box-shadow;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -558,23 +558,26 @@ div.foorer.container {
     position: relative;
     overflow: hidden;
 }
-.por-thumb::before  {
+.por-quote {
     display: inline-block;
     position: absolute;
     content: "";
     width: 100%;
     height: 100%;
+    margin: 0;
+    padding: 40px 32px;
 
+    color: var(--second-white-color);
     background-color: var(--accent-color);
-    opacity: 0;
+    opacity: 1;
     transform: translateY(100%);
 
-    transition-property: transform opacity;
+    transition-property: transform, opacity;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.por-thumb:hover::before,
-.por-thumb:focus::before{
+.por-bloc:hover .por-quote,
+.por-bloc:focus .por-quote{
     opacity: 1;
     transform: translateY(0%);
 }
@@ -635,11 +638,15 @@ div.foorer.container {
     
     width: 24px;
     height: 24px;
-
-    background-color: #E7E9FC;
+    color: #000;
+    background-color:  #E7E9FC;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
 }
+.modal-btn:hover {
+    background-color: var(--hover-color);
+    color: var(--white-text)
+}
 .modal-icon{
-    color: #000;
+    fill: currentColor;
 }
